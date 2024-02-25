@@ -8,18 +8,13 @@
             <h1><a href="/">Hannah's blog</a></h1>
         </header>
 
+        {% for post in posts %}
         <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My first post</a></h2>
-            <p>HTML is a code that is interpreted by your web browser such as Chrome, Firefox or Safari to display a web page for the user.
-            </p>
+            <time>published:  {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
+        {% endfor %}
 
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Head is an element that contains information about the document that is not displayed on the screen.
-            </p>
-        </article>
     </body>
 </html>
